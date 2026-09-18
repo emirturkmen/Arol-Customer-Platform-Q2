@@ -1,0 +1,8 @@
+fastapi==0.115.6
+uvicorn==0.34.0
+openpyxl==3.1.5
+pypdf==5.1.0
+scikit-learn==1.6.1
+openai==1.99.1
+qrcode[pil]==8.0
+python-dotenv==1.0.1

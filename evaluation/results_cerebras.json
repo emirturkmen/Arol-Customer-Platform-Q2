@@ -1,0 +1,238 @@
+{
+ "model": "qwen-3.8-27b",
+ "provider": "Cerebras (OpenAI-compatible endpoint)",
+ "date": "2026-09-04",
+ "questions": [
+  {
+   "n": 1,
+   "who": "Bonetti",
+   "q": "Which safety procedures must I follow before maintenance on this machine?",
+   "expected": "manuals",
+   "agent": "manuals",
+   "seconds": 1.3,
+   "pages": [
+    4,
+    24,
+    33
+   ],
+   "answer": "Before any maintenance on MCH-0001, the manual (page 33) requires:\n\n- **Isolate all energy sources** and dissipate residual energies \u2014 this must be done by qualified technicians.\n- **Pneumatic energy:** put the slider valve in the discharge position and lock it there.\n- **Tools:** wrenches and tools used for maintenance or access to hazardous sections must not be left available to untrained operators.\n\nAfter the work, before restarting (page 33):\n\n- Check that replaced parts and tools have been removed from the machine.\n- Check that all guards, protections and safety devices removed during the intervention are correctly re-installed and operating.\n- Electrical safety components must be replaced within their life cycle (approx. 20 years).\n\nAlso note (page 24): any intervention on electric and/or pneumatic equipment is forbidden for personnel without the specific technical knowledge and training required."
+  },
+  {
+   "n": 2,
+   "who": "Bonetti",
+   "q": "How many closure heads does this machine have and at what rate does it run?",
+   "expected": "manuals",
+   "agent": "manuals",
+   "seconds": 1.4,
+   "pages": [
+    13,
+    16,
+    44
+   ],
+   "answer": "MCH-0001 (serial 15610) is a 20-head rotary closing machine, and its as-built configuration runs at 40,000 bottles per hour (machine record; head count also shown on the identification plate per manual page 13)."
+  },
+  {
+   "n": 3,
+   "who": "Bonetti",
+   "q": "Why is machine 15610 generating repeated alarms?",
+   "expected": "diagnostics",
+   "agent": "diagnostics",
+   "seconds": 5.9,
+   "pages": [
+    8,
+    19,
+    24,
+    31,
+    36,
+    37,
+    42,
+    46,
+    52,
+    71,
+    74,
+    87,
+    88,
+    97,
+    98,
+    133,
+    146,
+    147,
+    150,
+    152,
+    153
+   ],
+   "answer": "Here's what the last 30 days show for MCH-0001 (serial 15610, twin-chute capper, 20 heads / 40,000 bph):\n\n**The repeated alarms cluster around the caps feeding system:**\n- **AL082_MINIMUM_CAPS_LEVEL** (Low) \u2013 5\u00d7, last 2026-07-30\n- **AL016_CAPS_CHUTE_FULL** (Low) \u2013 4\u00d7, last 2026-08-03\n- **AL023_CAPS_CHECK_INTERVENTION** (Medium) \u2013 4\u00d7, last 2026-08-03\n- **AL074_OVERTURNED_CAPS_CHECK** (Medium) \u2013 4\u00d7, 1 still open, last 2026-08-03\n- **AL017_LOW_AIR_PRESSURE** (High) \u2013 4\u00d7, 1 still open, last 2026-07-29\n\n**Plus repeated emergency stops:** AL086_LINE_EMERGENCY_PRESSED (Critical) 4\u00d7 (2 still open) and AL024_FRONT_PANEL_EMERGENCY_PRESSED (Critical) 3\u00d7 (1 still open), all around 2026-07-22 to 2026-07-29.\n\n**What this means:** the chute is starving and clogging alternately (minimum level + chute full), and the air that drives the caps is weak \u2014 the manual's fault table (p. 152) points to a clogged sorter exit mouth and incorrect air-jet pressure as the first things to check, and p. 46 (twin-hopper feeding) explains the machine switches to the second chute when the first runs dry or the transfer-disc photocell misfires. The low-air-pressure alarms fit: p. 97 requires checking supply pressure, pressure reducers, condensate and filter clogging every 40 working hours. The emergency presses look like operators stopping the line to clear the jams.\n\nSuggested first checks: clean the sorter exit mouth and chute, verify air pressure at the gauges and drain/replace the filter, then inspect the caps presence photocells and transfer-disc timing (p. 146)."
+  },
+  {
+   "n": 4,
+   "who": "Bonetti",
+   "q": "How did this machine run over the last 7 days?",
+   "expected": "diagnostics",
+   "agent": "diagnostics",
+   "seconds": 1.0,
+   "pages": [],
+   "answer": "Over the last 7 days (168 h), MCH-0001 ran like this:\n\n- **Uptime:** 70.2% \u2014 124 h running, 26 h stopped, 10 h idle, 4 h size change, 4 h in alarm\n- **Production:** avg 34,393 bph (\u224886% of the 40,000 bph nominal), peak 38,895 bph\n- **Temperature:** avg 41.4 \u00b0C, max 50.2 \u00b0C\n- **Energy:** 409.9 kWh total\n- **Alarms:** 14 raised in the period\n\nWant me to dig into the alarms or the 26 h of stoppage?"
+  },
+  {
+   "n": 5,
+   "who": "Bonetti",
+   "q": "What does AL017_LOW_AIR_PRESSURE mean and what does the manual recommend?",
+   "expected": "diagnostics",
+   "agent": "diagnostics",
+   "seconds": 2.9,
+   "pages": [
+    28,
+    88,
+    93,
+    97,
+    98,
+    112,
+    133,
+    152
+   ],
+   "answer": "I searched the manual for AL017 but found no dedicated entry for that alarm code, so I can only tell you what the name indicates plus the manual's air-pressure guidance:\n\n- **Meaning:** the pneumatic system's air pressure has dropped below the working pressure set on the machine.\n- **Manual recommendations (pneumatic system checks, p. 97 and p. 98):**\n  - Check the air supply pressure at the utilization points and verify the pressure reducers are set to the work pressure (value shown on the gauges).\n  - Drain condensate from under the discharge filter and check the filter for clogging; replace if needed.\n  - Check for leaks at fittings and lines, and verify the air pressure at the machine entry matches the data plate.\n- **Related note (p. 88):** if caps are not correctly shifted by the nozzles, adjust the air pressure with the fitting pressure reducers.\n\nIf you want, I can pull the recent AL017 occurrences on MCH-0001 to see when and how often it has fired."
+  },
+  {
+   "n": 6,
+   "who": "Bonetti",
+   "q": "What maintenance was recently performed on this machine?",
+   "expected": "diagnostics",
+   "agent": "diagnostics",
+   "seconds": 1.2,
+   "pages": [],
+   "answer": "Recent work on MCH-0001 (last ~3 weeks):\n\n- **2026-08-01** \u2013 TCK-0060, size change assistance (Closed, Low)\n- **2026-07-31** \u2013 TCK-0053, remote troubleshooting after AL086_LINE_EMERGENCY_PRESSED (In progress, High, AROL Technical Service); TCK-0054, remote troubleshooting after AL024_FRONT_PANEL_EMERGENCY_PRESSED (Resolved, Critical)\n- **2026-07-30** \u2013 TCK-0048, remote troubleshooting after AL086_LINE_EMERGENCY_PRESSED (Resolved, Critical)\n- **2026-07-25** \u2013 TCK-0039, scheduled maintenance (Resolved, Medium)\n- **2026-07-24** \u2013 TCK-0038, on-site service for AL031_HEADS_MOTOR_OVERLOAD (Resolved, High, AROL); TCK-0037, remote troubleshooting after AL086_LINE_EMERGENCY_PRESSED (Closed, Critical)\n- **2026-07-18** \u2013 TCK-0026, on-site service for AL083_FALLEN_BOTTLE_ALARM (Resolved, Medium, AROL); TCK-0027, remote troubleshooting for AL074_OVERTURNED_CAPS_CHECK (Closed)\n\nThe most recent scheduled maintenance was 2026-07-25 (TCK-0039). Note that TCK-0053 (emergency stop, 2026-07-31) is still **in progress** \u2014 worth following up."
+  },
+  {
+   "n": 7,
+   "who": "Ranieri",
+   "q": "What was the last revision of QTE-2025-0001 and what changed?",
+   "expected": "commercial",
+   "agent": "commercial",
+   "seconds": 1.0,
+   "pages": [],
+   "answer": "The last revision of QTE-2025-0001 is **Revision 2 (QREV-0002)**, issued 2025-03-28 and currently **Approved**.\n\nChanges vs. Revision 1:\n- The optional twin-chute cap release photocell kit (6,200.00 EUR) was removed from scope.\n- A 5% volume discount was applied to the remaining lines (overhaul kit: 38,400.00 \u2192 36,480.00 EUR; magnetic ring set: 9,850.00 \u2192 9,357.50 EUR).\n- Total dropped from 54,450.00 EUR to **45,837.50 EUR**."
+  },
+  {
+   "n": 8,
+   "who": "Ranieri",
+   "q": "How much did order ORD-2025-0001 cost?",
+   "expected": "commercial",
+   "agent": "commercial",
+   "seconds": 0.9,
+   "pages": [],
+   "answer": "Order ORD-2025-0001 cost a total of **45,837.50 EUR**, made up of:\n\n- PK 314 closure head overhaul kit (20 heads): 36,480.00 EUR\n- Magnetic ring set for PK 314 closure heads (20 pieces): 9,357.50 EUR\n\nBoth lines were delivered and the order is closed."
+  },
+  {
+   "n": 9,
+   "who": "Fabbri",
+   "q": "Which quotations never became an order?",
+   "expected": "commercial",
+   "agent": "commercial",
+   "seconds": 1.3,
+   "pages": [],
+   "answer": "Two quotations never became an order:\n\n- **QTE-2026-0014** \u2013 Twin chute cap feeding upgrade and overturned cap ejection, Bottling Line 3 (still in Draft)\n- **QTE-2025-0008** \u2013 Centrifugal caps sorter exit mouth and compensating springs, Bottling Line 3 (Approved, but no order was placed)"
+  },
+  {
+   "n": 10,
+   "who": "Esteves",
+   "q": "Which machines does my company have?",
+   "expected": "manuals",
+   "agent": "manuals",
+   "seconds": 2.6,
+   "pages": [],
+   "answer": "Your company, Aguas de Cascais Lda., currently has no machines registered in the system."
+  },
+  {
+   "n": 11,
+   "who": "Bonetti",
+   "q": "How much did this machine cost?",
+   "expected": "ret: commercial yok",
+   "agent": "commercial",
+   "seconds": 0.2,
+   "pages": [],
+   "answer": "Your account has 'technician' visibility, which does not include commercial data, so I cannot answer this question. Please ask a colleague whose account covers it."
+  },
+  {
+   "n": 12,
+   "who": "Ranieri",
+   "q": "Are there any open alarms on machine 15610?",
+   "expected": "ret: operational yok",
+   "agent": "diagnostics",
+   "seconds": 0.3,
+   "pages": [],
+   "answer": "Your account has 'commercial' visibility, which does not include operational data, so I cannot answer this question. Please ask a colleague whose account covers it."
+  },
+  {
+   "n": 13,
+   "who": "Bonetti",
+   "q": "Show me machine 17478",
+   "expected": "ret: filoda degil",
+   "agent": "manuals",
+   "seconds": 1.2,
+   "pages": [],
+   "answer": "Machine 17478 is not registered to Valgrande Bevande S.p.A. \u2014 it's not part of your fleet. If you'd like, I can list the machines that are registered to your company."
+  },
+  {
+   "n": 14,
+   "who": "Ranieri",
+   "q": "Show me quotation QTE-2025-0003",
+   "expected": "ret: baska sirket",
+   "agent": "commercial",
+   "seconds": 1.3,
+   "pages": [],
+   "answer": "I couldn't find quotation QTE-2025-0003 \u2014 it doesn't belong to Valgrande Bevande S.p.A. The quotations on file are:\n\n- **QTE-2026-0014** \u2013 Twin chute cap feeding upgrade (Bottling Line 3), Rev. 1 Draft\n- **QTE-2026-0009** \u2013 Bottle neck guide size change (Alessandria Line 1), Rev. 2 Approved \u2192 ORD-2026-0006\n- **QTE-2025-0008** \u2013 Centrifugal caps sorter exit mouth (Bottling Line 3), Rev. 1 Approved\n- **QTE-2025-0005** \u2013 SSD closure head roller replacement + UV steriliser service (Bottling Line 5), Rev. 2 Approved \u2192 ORD-2025-0004\n- **QTE-2025-0001** \u2013 12,000 h closure head overhaul (Novara Line 3), Rev. 2 Approved \u2192 ORD-2025-0001\n\nWould you like the details of one of these?"
+  }
+ ],
+ "routing": {
+  "Q1 safety": {
+   "votes": {
+    "manuals": 6
+   },
+   "expected": "manuals",
+   "correct": 6
+  },
+  "Q2 heads & rate": {
+   "votes": {
+    "manuals": 6
+   },
+   "expected": "manuals",
+   "correct": 6
+  },
+  "Q3 alarms": {
+   "votes": {
+    "diagnostics": 6
+   },
+   "expected": "diagnostics",
+   "correct": 6
+  },
+  "Q8 order cost": {
+   "votes": {
+    "commercial": 6
+   },
+   "expected": "commercial",
+   "correct": 6
+  },
+  "Q10 fleet list": {
+   "votes": {
+    "manuals": 6
+   },
+   "expected": "manuals",
+   "correct": 6
+  },
+  "Q11 refusal": {
+   "votes": {
+    "commercial": 6
+   },
+   "expected": "commercial",
+   "correct": 6
+  }
+ },
+ "summary": {
+  "answersCorrect": "14/14",
+  "expectedAgent": "14/14",
+  "secondsAverage": 1.6,
+  "secondsMin": 0.2,
+  "secondsMax": 5.9,
+  "routingCorrect": "36/36"
+ }
+}

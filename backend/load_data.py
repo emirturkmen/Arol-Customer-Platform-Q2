@@ -67,6 +67,13 @@ def load_sheet(conn, sheet):
 
 
 def main():
+    if not DATASET_XLSX.exists():
+        raise SystemExit(
+            f"Workbook not found: {DATASET_XLSX}\n"
+            "The dataset is not in the repository. Copy the course folder into the "
+            "project root under the name 'Project-Q2-DataBase' (see README, 3.1)."
+        )
+
     DATA_DIR.mkdir(exist_ok=True)
     if DB_PATH.exists():
         DB_PATH.unlink()

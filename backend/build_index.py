@@ -39,6 +39,13 @@ def read_manual(path):
 
 
 def main():
+    if not MANUALS_DIR.exists():
+        raise SystemExit(
+            f"Manuals not found: {MANUALS_DIR}\n"
+            "The dataset is not in the repository. Copy the course folder into the "
+            "project root under the name 'Project-Q2-DataBase' (see README, 3.1)."
+        )
+
     DATA_DIR.mkdir(exist_ok=True)
     chunks = []
     for path in sorted(MANUALS_DIR.glob("*_manual_EN.pdf")):

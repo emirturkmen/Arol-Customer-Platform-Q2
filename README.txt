@@ -35,7 +35,24 @@ Design choices are explained in DOCUMENTATION.md.
 3. INSTALLATION
 ---------------
 
-3.1 Language model
+3.1 Dataset
+
+    The dataset is not part of this repository: it is given by the course and
+    the manuals are AROL teaching copies that must not be redistributed. Put
+    the folder in the project root, keeping its name:
+
+        project_q2_s353921_s358966/
+            Project-Q2-DataBase/
+                AROL_Q2_synthetic_fleet_dataset.xlsx
+                manuals/
+                    15610_manual_EN.pdf
+                    ...
+
+    The two scripts of 3.3 read it from there and write into data/. Nothing in
+    the folder is ever modified.
+
+
+3.2 Language model
 
     Get a free API key at https://cloud.cerebras.ai, then:
 
@@ -56,7 +73,7 @@ Design choices are explained in DOCUMENTATION.md.
     evaluation on the default model, and repeats it on a second provider to
     show that the correctness does not come from one particular model.
 
-3.2 Backend
+3.3 Backend
 
         python3 -m venv .venv
         source .venv/bin/activate          (Windows: .venv\Scripts\activate)
@@ -71,7 +88,7 @@ Design choices are explained in DOCUMENTATION.md.
         python load_data.py          Excel workbook  -> data/arol.db
         python build_index.py        manual PDFs     -> data/manual_index.pkl
 
-3.3 Frontend
+3.4 Frontend
 
         cd frontend
         npm install

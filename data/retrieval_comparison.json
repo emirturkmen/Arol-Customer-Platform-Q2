@@ -1,0 +1,392 @@
+{
+  "questions": [
+    {
+      "question": "Which safety procedures must I follow before maintenance on this machine?",
+      "serialNumber": "15610",
+      "style": "manual wording",
+      "relevantPages": [
+        30,
+        33
+      ],
+      "tfidf": {
+        "pages": [
+          4,
+          33,
+          24
+        ],
+        "ms": 12.7,
+        "hit1": false,
+        "hit3": true,
+        "reciprocalRank": 0.5
+      },
+      "embedding": {
+        "pages": [
+          94,
+          34,
+          3
+        ],
+        "ms": 878.6,
+        "hit1": false,
+        "hit3": false,
+        "reciprocalRank": 0.0
+      }
+    },
+    {
+      "question": "What must I do before opening the machine so that it cannot start while I work inside?",
+      "serialNumber": "15610",
+      "style": "operator wording",
+      "relevantPages": [
+        30,
+        33
+      ],
+      "tfidf": {
+        "pages": [
+          45,
+          46,
+          140
+        ],
+        "ms": 0.9,
+        "hit1": false,
+        "hit3": false,
+        "reciprocalRank": 0.0
+      },
+      "embedding": {
+        "pages": [
+          3,
+          33,
+          34
+        ],
+        "ms": 9.9,
+        "hit1": false,
+        "hit3": true,
+        "reciprocalRank": 0.5
+      }
+    },
+    {
+      "question": "How is the tightening torque of the closure head adjusted?",
+      "serialNumber": "15610",
+      "style": "manual wording",
+      "relevantPages": [
+        89
+      ],
+      "tfidf": {
+        "pages": [
+          90,
+          153,
+          89
+        ],
+        "ms": 0.6,
+        "hit1": false,
+        "hit3": true,
+        "reciprocalRank": 0.333
+      },
+      "embedding": {
+        "pages": [
+          90,
+          70,
+          89
+        ],
+        "ms": 12.4,
+        "hit1": false,
+        "hit3": true,
+        "reciprocalRank": 0.333
+      }
+    },
+    {
+      "question": "The caps come out too loose, which adjustment should I check?",
+      "serialNumber": "15610",
+      "style": "operator wording",
+      "relevantPages": [
+        89,
+        153
+      ],
+      "tfidf": {
+        "pages": [
+          68,
+          129,
+          48
+        ],
+        "ms": 0.7,
+        "hit1": false,
+        "hit3": false,
+        "reciprocalRank": 0.0
+      },
+      "embedding": {
+        "pages": [
+          85,
+          87,
+          88
+        ],
+        "ms": 11.6,
+        "hit1": false,
+        "hit3": false,
+        "reciprocalRank": 0.0
+      }
+    },
+    {
+      "question": "What has to be done every 500 working hours?",
+      "serialNumber": "15610",
+      "style": "manual wording",
+      "relevantPages": [
+        98
+      ],
+      "tfidf": {
+        "pages": [
+          6,
+          95,
+          94
+        ],
+        "ms": 0.7,
+        "hit1": false,
+        "hit3": false,
+        "reciprocalRank": 0.0
+      },
+      "embedding": {
+        "pages": [
+          95,
+          94,
+          97
+        ],
+        "ms": 9.8,
+        "hit1": false,
+        "hit3": false,
+        "reciprocalRank": 0.0
+      }
+    },
+    {
+      "question": "How many closure heads does this machine have and what is its nominal production rate?",
+      "serialNumber": "15610",
+      "style": "manual wording",
+      "relevantPages": [
+        1,
+        21
+      ],
+      "tfidf": {
+        "pages": [
+          21,
+          100,
+          44
+        ],
+        "ms": 0.6,
+        "hit1": true,
+        "hit3": true,
+        "reciprocalRank": 1.0
+      },
+      "embedding": {
+        "pages": [
+          93,
+          16,
+          21
+        ],
+        "ms": 9.5,
+        "hit1": false,
+        "hit3": true,
+        "reciprocalRank": 0.333
+      }
+    },
+    {
+      "question": "How do I check the compressed air supply and look for leaks?",
+      "serialNumber": "15610",
+      "style": "operator wording",
+      "relevantPages": [
+        97,
+        98
+      ],
+      "tfidf": {
+        "pages": [
+          98,
+          79,
+          71
+        ],
+        "ms": 0.7,
+        "hit1": true,
+        "hit3": true,
+        "reciprocalRank": 1.0
+      },
+      "embedding": {
+        "pages": [
+          97,
+          44,
+          79
+        ],
+        "ms": 8.9,
+        "hit1": true,
+        "hit3": true,
+        "reciprocalRank": 1.0
+      }
+    },
+    {
+      "question": "What happens when an emergency mushroom button is pressed?",
+      "serialNumber": "15610",
+      "style": "manual wording",
+      "relevantPages": [
+        31
+      ],
+      "tfidf": {
+        "pages": [
+          31,
+          148,
+          24
+        ],
+        "ms": 0.7,
+        "hit1": true,
+        "hit3": true,
+        "reciprocalRank": 1.0
+      },
+      "embedding": {
+        "pages": [
+          124,
+          52,
+          31
+        ],
+        "ms": 8.4,
+        "hit1": false,
+        "hit3": true,
+        "reciprocalRank": 0.333
+      }
+    },
+    {
+      "question": "How often should the outside of the machine be washed?",
+      "serialNumber": "15610",
+      "style": "operator wording",
+      "relevantPages": [
+        53
+      ],
+      "tfidf": {
+        "pages": [
+          140,
+          41,
+          2
+        ],
+        "ms": 0.6,
+        "hit1": false,
+        "hit3": false,
+        "reciprocalRank": 0.0
+      },
+      "embedding": {
+        "pages": [
+          53,
+          55,
+          54
+        ],
+        "ms": 10.8,
+        "hit1": true,
+        "hit3": true,
+        "reciprocalRank": 1.0
+      }
+    },
+    {
+      "question": "Which grease may I use on parts that can touch the product?",
+      "serialNumber": "15610",
+      "style": "operator wording",
+      "relevantPages": [
+        129,
+        130,
+        131
+      ],
+      "tfidf": {
+        "pages": [
+          55,
+          142,
+          138
+        ],
+        "ms": 0.5,
+        "hit1": false,
+        "hit3": false,
+        "reciprocalRank": 0.0
+      },
+      "embedding": {
+        "pages": [
+          139,
+          138,
+          140
+        ],
+        "ms": 8.3,
+        "hit1": false,
+        "hit3": false,
+        "reciprocalRank": 0.0
+      }
+    },
+    {
+      "question": "Where is the list of faults and their possible remedies?",
+      "serialNumber": "15610",
+      "style": "manual wording",
+      "relevantPages": [
+        150
+      ],
+      "tfidf": {
+        "pages": [
+          150,
+          8,
+          99
+        ],
+        "ms": 0.8,
+        "hit1": true,
+        "hit3": true,
+        "reciprocalRank": 1.0
+      },
+      "embedding": {
+        "pages": [
+          150,
+          35,
+          94
+        ],
+        "ms": 10.1,
+        "hit1": true,
+        "hit3": true,
+        "reciprocalRank": 1.0
+      }
+    },
+    {
+      "question": "How many heads does machine 17203 have and how fast does it run?",
+      "serialNumber": "17203",
+      "style": "operator wording",
+      "relevantPages": [
+        1,
+        18
+      ],
+      "tfidf": {
+        "pages": [
+          1,
+          14,
+          18
+        ],
+        "ms": 0.7,
+        "hit1": true,
+        "hit3": true,
+        "reciprocalRank": 1.0
+      },
+      "embedding": {
+        "pages": [
+          1,
+          18,
+          136
+        ],
+        "ms": 8.5,
+        "hit1": true,
+        "hit3": true,
+        "reciprocalRank": 1.0
+      }
+    }
+  ],
+  "summary": {
+    "tfidf": {
+      "hit@1": 0.417,
+      "hit@3": 0.583,
+      "MRR": 0.486,
+      "msPerQuery": 1.7,
+      "hit@3 (manual wording)": 0.833,
+      "hit@3 (operator wording)": 0.333
+    },
+    "embedding": {
+      "hit@1": 0.333,
+      "hit@3": 0.667,
+      "MRR": 0.458,
+      "msPerQuery": 82.2,
+      "hit@3 (manual wording)": 0.667,
+      "hit@3 (operator wording)": 0.667
+    }
+  },
+  "embeddingModel": "sentence-transformers/all-MiniLM-L6-v2",
+  "topK": 3
+}

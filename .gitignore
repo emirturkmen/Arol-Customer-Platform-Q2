@@ -4,3 +4,5 @@ node_modules/
 dist/
 .env
 __pycache__/
+Project-Q2-DataBase/
+.DS_Store

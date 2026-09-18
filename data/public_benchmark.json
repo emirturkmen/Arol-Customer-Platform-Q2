@@ -1,0 +1,23 @@
+{
+  "dataset": "BEIR / SciFact (test split)",
+  "documents": 5183,
+  "queries": 300,
+  "embeddingModel": "sentence-transformers/all-MiniLM-L6-v2",
+  "topK": 10,
+  "summary": {
+    "tfidf": {
+      "hit@1": 0.483,
+      "hit@3": 0.683,
+      "MRR@10": 0.589,
+      "nDCG@10": 0.628,
+      "msPerQuery": 6.4
+    },
+    "embedding": {
+      "hit@1": 0.503,
+      "hit@3": 0.683,
+      "MRR@10": 0.605,
+      "nDCG@10": 0.645,
+      "msPerQuery": 27.4
+    }
+  }
+}
